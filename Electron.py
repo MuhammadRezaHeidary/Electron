@@ -1,94 +1,28 @@
-# Example
+from matplotlib import pyplot as plt, patches
 
-# w = 10
-# h = 5
-# measurements on x-axis: 2, 5
-# measurements on y-axis: 3
+big_sheet_length_cm = 120
+big_sheet_height_cm = 100
 
-#    ___2______5__________ 
-#   |   |      |          |
-#   |   |      |          |
-#  3|___|______|__________|
-#   |   |      |          |
-#   |___|______|__________|
+sheet_length_cm = 30
+sheet_height_cm = 20
 
-# Number of squares in sub-rectangles = 4 (one 2x2, one 3x3, two 5x5)
-
-
-import sys
-import math
-
-w, h, count_x, count_y = [10, 5, 2, 3]
-measureX = [3, 6]
-measureY = [3, 6]
-
-def mergeDict(dict1, dict2):
-    dict3 = {**dict1, **dict2}
-    for key, value in dict3.items():
-        if key in dict1 and key in dict2:
-            dict3[key] = value + dict1[key]
-    
-    return dict3
-    
-def countUnique(cutsList):
-    #print("countUnique start with list ", list)
-    unique = set(cutsList)
-    result = {}
-    for i in unique:
-        result[i] = cutsList.count(i)
-    
-    return result
-    
-def getCuts(length, measures):
-    #print("getCuts start with length %s and measures %s" % (length, measures))
-    listLength = len(measures)
-    if listLength > 1:
-        tempList = [(measures[-1] - measures[i]) for i in range(listLength) if (measures[-1] - measures[i]) > 0]
-    else:
-        tempList = []
-    tempList.append(measures[-1])
-    cut = length - measures[-1]   
-    if cut > 0:
-        tempList.append(cut)
-    
-    return countUnique(tempList)
-    
-
-def getCutList(cutsList, length, measures):
-    #print("getCutsList2 start with cutsList %s, length %s and measures %s" % (cutsList, length, measures))
-    for i in range(1, len(measures)+1):
-        cutsList = mergeDict(cutsList, getCuts(length, measures[:i]))
-        
-    try:
-        cutsList[length] = 1
-    except:
-        cutsList[length] += 1
-    
-    return cutsList
-    
-    
-def countTotals(dictX, dictY):
-    #print("countTotals start with dictX %s and dictY %s" % (dictX, dictY))
-    result = 0
-    
-    if len(dictX) >= len(dictY):
-        smaller = dictY
-        bigger = dictX
-    else:
-        smaller = dictX
-        bigger = dictY
-    
-    for key in smaller:
-        try:
-            result += bigger[key] * smaller[key]
-        except:
-            pass
-             
-    return result
+plt.rcParams["figure.figsize"] = [big_sheet_length_cm/20, big_sheet_height_cm/20]
+plt.rcParams["figure.autolayout"] = True
+fig = plt.figure("PCB Sheet Partitioner")
+ax = fig.add_subplot(111)
+rectangle1 = patches.Rectangle((0, 0), sheet_length_cm, sheet_height_cm, edgecolor='black', facecolor="#ffffbb", linewidth=1)
+rectangle2 = patches.Rectangle((0, sheet_height_cm), sheet_length_cm, sheet_height_cm, edgecolor='black', facecolor="#ffffbb", linewidth=1)
+rectangle3 = patches.Rectangle((sheet_length_cm, 0), sheet_length_cm, sheet_height_cm, edgecolor='black', facecolor="#ffffbb", linewidth=1)
+rectangle4 = patches.Rectangle((sheet_length_cm, sheet_height_cm), sheet_length_cm, sheet_height_cm, edgecolor='black', facecolor="#ffffbb", linewidth=1)
+rectangle5 = patches.Rectangle((40, 60), sheet_length_cm, sheet_height_cm, edgecolor='black', facecolor="#ffffbb", linewidth=1)
 
 
-cutsX = getCutList({}, w, measureX)
-cutsY = getCutList({}, h, measureY)
+ax.add_patch(rectangle1)
+ax.add_patch(rectangle2)
+ax.add_patch(rectangle3)
+ax.add_patch(rectangle4)
+ax.add_patch(rectangle5)
 
-
-print(countTotals(cutsX, cutsY))
+plt.xlim([0, big_sheet_length_cm])
+plt.ylim([0, big_sheet_height_cm])
+plt.show()
