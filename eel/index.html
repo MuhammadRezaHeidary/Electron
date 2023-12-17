@@ -4,7 +4,7 @@
 	<meta charset="UTF-8" />
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <script src="https://cdn.tailwindcss.com"></script>
+	<script src="tailwind-3-3-5.js"></script>
 	<link rel="stylesheet" href="styles.css">
 	<link rel="icon" href="icon.png">
 	<title>Electron</title>
@@ -12,7 +12,6 @@
 <body>
 <div class="h-screen overflow-hidden" style="background: #edf2ff;">
 	<div class="h-20 border overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
-
 		<header class="bg-white shadow-lg h-16 hidden md:flex">
 		  <a href="https://github.com/MuhammadRezaHeidary/Electron" class="border flex-shrink-0 flex items-center justify-center px-4 lg:px-6 xl:px-8">
 				<img src="icon.png" class="h-8" alt="Electron Logo" />
@@ -25,11 +24,12 @@
 		          <span>Partitioner</span>
 		        </a>
 		      </li>
-		      <li class="p-3 xl:p-6">
-		        <a href="">
-		          <span>PCB</span>
-		        </a>
-		      </li>
+					<li class="p-3 xl:p-6">
+						<a href="" class="flex items-center">
+							<span>PCB</span>
+							<svg class="h-3 opacity-30 ml-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14 fa-7x"><path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+						</a>
+					</li>
 		      <li class="p-3 xl:p-6">
 		        <a href="">
 		          <span>PCBA</span>
@@ -37,25 +37,25 @@
 		      </li>
 		      <li class="p-3 xl:p-6">
 		        <a href="">
-		          <span>Projects</span>
+		          <span>HF</span>
 		        </a>
 		      </li>
+					<li class="p-3 xl:p-6">
+						<a href="" class="flex items-center">
+							<span>Project</span>
+							<svg class="h-3 opacity-30 ml-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14 fa-7x"><path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path></svg>
+						</a>
+					</li>
 		      <li class="p-3 xl:p-6">
 		        <a href="">
-		          <span>Skills</span>
+		          <span>Settings</span>
 		        </a>
 		      </li>
-		      <li class="p-3 xl:p-6">
-		        <a href="">
-		          <span>Contacts</span>
-		        </a>
-		      </li>
-		      <li class="p-3 xl:p-6">
-		        <a href="" class="flex items-center">
-		          <span>Pages</span>
-		          <svg class="h-3 opacity-30 ml-2" aria-hidden="true" focusable="false" data-prefix="far" data-icon="chevron-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-chevron-down fa-w-14 fa-7x"><path fill="currentColor" d="M441.9 167.3l-19.8-19.8c-4.7-4.7-12.3-4.7-17 0L224 328.2 42.9 147.5c-4.7-4.7-12.3-4.7-17 0L6.1 167.3c-4.7 4.7-4.7 12.3 0 17l209.4 209.4c4.7 4.7 12.3 4.7 17 0l209.4-209.4c4.7-4.7 4.7-12.3 0-17z"></path></svg>
-		        </a>
-		      </li>
+					<li class="p-3 xl:p-6">
+						<a href="">
+							<span>Help</span>
+						</a>
+					</li>
 		    </ul>
 		  </nav>
 		  <nav class="hidden xl:contents">
@@ -80,40 +80,122 @@
 		</header>
 	</div>
 
-	<div class="m-8">
-		<form class="w-full">
-		  <div class="flex flex-wrap justify-around">
-		    <div class="px-3 mb-6 md:mb-0">
-		      <label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
-		        PCB Raw Material Size:
-		      </label>
-		      <input id="ptn-bare-length" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="123cm" value="123">
-					<label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-		        X
-		      </label>
-					<input id="ptn-bare-height" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="103cm" value="103">
+	<div class="flex">
+		<div class="w-5/12 m-8 items-center justify-center">
+			<form class="w-full">
+				<div class="block">
+					<div class="flex px-3 mb-6 md:mb-0">
+						<label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
+							Algorithm:
+						</label>
+						<div class="items-center py-3 px-4 mb-3 relative inline-block text-left">
+						  <div>
+						    <button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+						      Panel Optimiziation Algorithm
+						      <svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+						        <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+						      </svg>
+						    </button>
+						  </div>
+							<!-- remove hidden -->
+						  <div class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+						    <div class="py-1" role="none">
+						      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="ptn-alg-sheet">by Sheet</a>
+						      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="ptn-alg-pcb">by PCB</a>
+						      <a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="ptn-alg-pcb-double">by PCB Double Panels</a>
+									<a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="ptn-alg-pcb-double">by PCB Triple Panels</a>
+									<a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="ptn-alg-low-error">Lowest Error</a>
+								</div>
+						  </div>
+						</div>
+					</div>
+					<div class="px-3 mb-6 md:mb-0">
+						<label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
+							PCB Raw Material Size:
+						</label>
+						<input id="ptn-bare-length" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="123cm" value="123">
+						<label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+							X
+						</label>
+						<input id="ptn-bare-height" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="103cm" value="103">
+					</div>
+					<div class="px-3 mb-6 md:mb-0">
+						<label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
+							Sheet Minimum Size:
+						</label>
+						<input id="ptn-sheet-length" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="30cm" value="">
+						<label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+							X
+						</label>
+						<input id="ptn-sheet-height" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="20cm" value="">
+					</div>
+					<div class="px-3 mb-6 md:mb-0">
+						<label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
+							Sheet Size:
+						</label>
+						<input id="ptn-sheet-length" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="30cm" value="">
+						<label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+							X
+						</label>
+						<input id="ptn-sheet-height" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="20cm" value="">
+					</div>
+					<div class="px-3 mb-6 md:mb-0">
+						<label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
+							Sheet Edge Margin:
+						</label>
+						<input id="ptn-margin-top" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+						<input id="ptn-margin-left" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+						<input id="ptn-margin-right" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+						<input id="ptn-margin-bot" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+					</div>
+					<div class="px-3 mb-6 md:mb-0">
+						<label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
+							PCBA Edge Clearance:
+						</label>
+						<input id="ptn-margin-top" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+						<input id="ptn-margin-left" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+						<input id="ptn-margin-right" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+						<input id="ptn-margin-bot" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="5cm" value="">
+					</div>
+					<div class="flex px-3 mb-6 md:mb-0">
+						<label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
+							Sheet Direction:
+						</label>
+						<div class="items-center py-3 px-4 mb-3 relative inline-block text-left">
+							<div>
+								<button type="button" class="inline-flex w-full justify-center gap-x-1.5 rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50" id="menu-button" aria-expanded="true" aria-haspopup="true">
+									Sheet Direction
+									<svg class="-mr-1 h-5 w-5 text-gray-400" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+										<path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+									</svg>
+								</button>
+							</div>
+							<!-- remove hidden -->
+							<div class="hidden absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+								<div class="py-1" role="none">
+									<a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="ptn-dir-horizontal">Horizontal</a>
+									<a href="#" class="text-gray-700 block px-4 py-2 text-sm" role="menuitem" tabindex="-1" id="ptn-dir-vertical">Vertical</a>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="bg-black hover:bg-gray-700 text-white font-bold py-3 px-4 mb-3 rounded" id="ptn-panelize">Panelize</button>
 				</div>
-				<div class="px-3 mb-6 md:mb-0">
-		      <label class="uppercase tracking-wide text-gray-700 text-l font-bold mb-2" for="grid-first-name">
-		        Sheet Size:
-		      </label>
-		      <input id="ptn-sheet-length" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="30cm" value="">
-					<label class="uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-		        X
-		      </label>
-					<input id="ptn-sheet-height" class="appearance-none w-20 bg-gray-200 text-gray-700 border border-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" type="text" placeholder="20cm" value="">
+			</form>
+		</div>
+			<!-- <div class="flex justify-center items-center">
+			</div> -->
+		<div class="w-5/12">
+			<div class="div-container">
+				<!-- <div class="iframe-container"> -->
+				<div class="">
+					<iframe frameborder="0" allowfullscreen title="Figure" src="figure.html"></iframe>
 				</div>
-				<button class="bg-black hover:bg-gray-700 text-white font-bold py-3 px-4 mb-3 rounded" id="ptn-panelize">Panelize</button>
+			</div>
+		</div>
+	</div>
 
-		</form>
-	</div>
-	<!-- <div class="flex justify-center items-center">
-	</div> -->
-	<div class="div-container">
-	  <div class="iframe-container">
-			<iframe frameborder="0" allowfullscreen title="Figure" src="figure.html"></iframe>
-	  </div>
-	</div>
+
 	<script type="text/javascript" src="../eel.js"></script>
 	<script type="text/javascript" src="./script.js"></script>
 </div>

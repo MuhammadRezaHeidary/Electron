@@ -11,10 +11,7 @@ document.getElementById("ptn-panelize").onclick = function () {
 	else if(parseFloat(BareHeight) <= parseFloat(SheetHeight))
 		alert("Sheet height must be smaller than PCB raw materal height!");
 	else
-		eel.handleinput(parseFloat(BareLength), parseFloat(BareHeight), parseFloat(SheetLength)>=0?parseFloat(SheetLength):30, parseFloat(SheetHeight)>=0?parseFloat(SheetHeight):20);
+		eel.plot_partitioner(parseFloat(BareLength), parseFloat(BareHeight), parseFloat(SheetLength)>=0?parseFloat(SheetLength):30, parseFloat(SheetHeight)>=0?parseFloat(SheetHeight):20);
 
-	// eel.plot_partitioner()(function(number){
-	// 	console.log(number);
-  // })
 
 }
