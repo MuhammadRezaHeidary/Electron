@@ -83,7 +83,8 @@ user32 = ctypes.windll.user32
 user32.SetProcessDPIAware()
 [screen_w, screen_h] = [user32.GetSystemMetrics(0), user32.GetSystemMetrics(1)]
 
-eel.start("index.html", mode='chrome',
+# open in default system browser
+eel.start("index.html", mode='default',
                         host='localhost',
                         port=20975,
                         block=True,
