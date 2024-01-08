@@ -25,19 +25,19 @@ document.getElementById("ptn-panelize").onclick = function (message) {
 	if(_SheetHeight_ <= 0 || isNaN(_SheetHeight_))
 		alert("Sheet Height must be bigger than 0cm!\rChanged to 20cm");
 
-	let _SheetEdgeClearanceTop_ = parseFloat(document.getElementById("ptn-margin-top").value);
+	let _SheetEdgeClearanceTop_ = parseFloat(document.getElementById("ptn-margin-top").value)/10.0;
 	if(_SheetEdgeClearanceTop_ < 0 || isNaN(_SheetEdgeClearanceTop_))
 		alert("Sheet Edge Clearance Top must be bigger than 0cm!\rChange to 0cm");
 
-	let _SheetEdgeClearanceLeft_ = parseFloat(document.getElementById("ptn-margin-left").value);
+	let _SheetEdgeClearanceLeft_ = parseFloat(document.getElementById("ptn-margin-left").value)/10.0;
 	if(_SheetEdgeClearanceLeft_ < 0 || isNaN(_SheetEdgeClearanceLeft_))
 		alert("Sheet Edge Clearance Left must be bigger than 0cm!\rChange to 0cm");
 
-	let _SheetEdgeClearanceRight_ = parseFloat(document.getElementById("ptn-margin-right").value);
+	let _SheetEdgeClearanceRight_ = parseFloat(document.getElementById("ptn-margin-right").value)/10.0;
 	if(_SheetEdgeClearanceRight_ < 0 || isNaN(_SheetEdgeClearanceRight_))
 		alert("Sheet Edge Clearance Right must be bigger than 0cm!\rChange to 0cm");
 
-	let _SheetEdgeClearanceBottom_ = parseFloat(document.getElementById("ptn-margin-bot").value);
+	let _SheetEdgeClearanceBottom_ = parseFloat(document.getElementById("ptn-margin-bot").value)/10.0;
 	if(_SheetEdgeClearanceBottom_ < 0 || isNaN(_SheetEdgeClearanceBottom_))
 		alert("Sheet Edge Clearance Bottom must be bigger than 0cm!\rChange to 0cm");
 

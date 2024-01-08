@@ -59,7 +59,7 @@ def plot_partitioner(BL,BH,SL,SH):
     plt.ylabel(big_sheet_height_cm,
               fontsize='20',
               color='black')
-    plt.title(f'Sheet = {n_rect_length}*{n_rect_height} ({rect_length}cm*{rect_height}cm)___ Error = {"{:.2f}".format(sheet_error)}%',
+    plt.title(f'#Sheet = {n_rect_length}*{n_rect_height} ({rect_length}cm*{rect_height}cm)___ #Error = {"{:.2f}".format(sheet_error)}%',
               fontsize='14',
               color='black')
 
